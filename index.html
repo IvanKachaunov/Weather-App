@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">   <!--favicon-->
+    <link rel="stylesheet" href="style.css">    <!--css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">     <!-- google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="nav">
+    <h2>Weather App</h2>
+    <ul class="list-navigation">
+        <li><a href="index.html">Home</li></a>
+        <li><a href="about.html">About</li></a>
+        <!-- <li><a href="">Contact</li></a> -->
+    </ul>
+    <div class="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+<ul class="burger-navigation">
+    <li><a href="index.html">Home</li></a>
+    <li><a href="about.html">About</li></a>
+    <!-- <li><a href="">Contact</li></a> -->
+</ul>
+
+<div id="content-container">
+<div class="introduction">
+    <form>
+        <br><br><br>
+        <br><br>
+    <div style="padding-bottom: 10px;">
+        <label for="name" class="name">Enter a city:</label><br>
+    </div>
+        <input type="text" class="form-text"><br><br>
+    </form>
+</div>
+
+<div class="buttons">
+    <div class="buttons-container">
+    <button type="submit" class="submit">Update</button>
+    <button class="delete">Hide</button>
+    </div>
+</div>
+
+<div class="weather-container">
+    <div class="weather-info" style="display: none;">
+        <div class="city-name">City:<div class="city"></div></div>
+        <!-- <div id="time" style="justify-content: space-around;">time</div> -->
+        <div id="time"></div>
+        
+        <div class="weather-ajax">
+            <div id="desciption"></div>
+            <div id="temp"></div>
+            <div id="cloud-animation"><img id="wicon" src="" height="60px" alt="Weather icon"></div>
+        <!-- <div id="feels-like-temp"></div> -->
+    </div>
+
+    </div>
+</div>
+
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
