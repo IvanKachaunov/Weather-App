@@ -3,7 +3,7 @@ $(document).ready(function (){
     $('.submit').on('click', function(e){
         e.preventDefault();
         let animation = $('.weather-info');
-        
+
         animation.show(300);
 
         let items = $(".weather-ajax")
@@ -41,16 +41,24 @@ $(document).ready(function (){
                 let cloudAnimation = $('#wicon'); // weather - icon
                 // let feelsliketemp = $('#feels-like-temp'); // main - feels like temprature
 
-                let iconCode = result ["weather"][0]["icon"]
+                let iconCode = result["weather"][0]["icon"]
                 let iconAnimation = 'https://openweathermap.org/img/wn/' + iconCode +'.png'; 
 
-                description.html( result ["weather"][0]["description"]);
-                temprature.html( result ["main"]["temp"] + "°C");
+                description.html( result["weather"][0]["description"]);
+                temprature.html( result["main"]["temp"] + "°C");
                 cloudAnimation.attr('src', iconAnimation) // not showing icon
 
                 // feelsliketemp.html( result ["main"]["feels_like"] + "°C");
             }
           });
+
+        //   $.ajax({   //place photo api
+        //       type: "GET",
+        //       url: ,
+        //       dataType: "json",
+        //       success:  function (result, status, xhr){
+        //       }
+        //   })
                 
     })
 
