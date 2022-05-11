@@ -50,16 +50,54 @@ $(document).ready(function (){
 
                 // feelsliketemp.html( result ["main"]["feels_like"] + "°C");
             }
+
+            
           });
 
-        //   $.ajax({   //place photo api
-        //       type: "GET",
-        //       url: ,
-        //       dataType: "json",
-        //       success:  function (result, status, xhr){
-        //       }
-        //   })
-                
+          $.ajax({   //place photo api
+            type: "GET",
+            url: "https://api.unsplash.com/search/photos?query="+$('.form-text').val()+"&client_id=Kxh522KOgJxlzL0srHj5qilFL2JXlCyNRFw6uSrjUyM&per_page=1",
+            dataType: "json",
+            success:  function (result, status, xhr){
+
+                    if (jQuery.isEmptyObject(result.results[0])) // if object is undefined or empty we will get original background
+                    {
+                        /* I decided to add photos for these places since the api dosen't add
+                        they are very beautiful and have special place in my life*/
+                    switch (currentInfo) { 
+                        case "Pravec":
+                        case "pravec":
+                        case "Правец":
+                        case "правец":
+                            $('body').css("background-image", `url("")`);
+                        break;
+                        case "Trudovec":
+                        case "trudovec":
+                        case "трудовец":
+                        case "Трудовец":
+                        case "Trudovets":
+                            $('body').css("background-image", `url("IMG_20200801_154125.jpg")`);
+                        break;
+                        default:
+                            $('body').css("background-image", "none")
+                            $('body').css("background-color", "rgb(238, 238, 238)");
+                    }
+                    } else{
+                        let imageResult = (result.results[0].urls.full);
+                        $('#image-result').attr('src', imageResult);
+                        $('body').css("background-image", `url("${imageResult}")`);
+                    }
+                // result.results.forEach(photo => {
+                //     $('#image-result').html(
+                //         `
+
+                //         <img src="${photo.urls.small}"/>
+
+                //         `)
+                // });
+            }
+
+        })       
     })
 
     $('.hamburger-menu').on('click', function(){
