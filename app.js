@@ -122,7 +122,8 @@ $(document).ready(function (){
             remove.hide(300);
         }
         if(remove.css('display') == 'none' && currentInfo == ''){
-            
+            $('body').css("background-image", "none");
+            $('body').css("background-color", "rgb(238, 238, 238)");
             alert("You can't hide what you can't see ;)");
         }
         
